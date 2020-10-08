@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import GetCalculator from "./GetCalculator";
 import NewsList from "./NewsList";
-import NewsArticle from "./NewsArticle";
+import P2Y from "./P2Y";
 import SourceSelection from "./SourceSelection";
 import YieldtoPrice from "./yieldtoprice";
 
@@ -95,7 +95,7 @@ export default function NavBar() {
        <NewsList/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-       <NewsArticle/>
+       <P2Y/>
       </TabPanel>
       <TabPanel value={value} index={3}>
        <SourceSelection/>
