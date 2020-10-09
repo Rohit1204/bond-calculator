@@ -151,13 +151,26 @@ handleSUbmit=(e)=>{
     return (
       <div className="container">
         <label for="ISIN">ISIN:</label>
-  <input type="text" id="ISIN" name="ISIN" onChange={this.handleChange}/><br/>
+        <input 
+            style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"left", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
+            type="text" 
+            id="ISIN" 
+            name="ISIN" 
+            placeholder="ISIN"
+            onChange={this.handleChange}
+        />
   <label for="PRice">Price:</label>
   <input type="text" id="price" name="Price" onChange={this.handleChange}/><br/>
   <label for="Bonds">NO. of bonds:</label>
   <input type="text" id="bonds" name="bonds" onChange={this.handleChange}/><br/>
-  <label for="Settlement date">SETTLEMENT DATE:</label>
-  <input type="text" id="sdate" name="stdate" onChange={this.handleChange}/><br/>
+  <input 
+    style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"right", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
+    type="text" 
+    id="sdate" 
+    name="stdate"
+    placeholder="Settlement Date" 
+    onChange={this.handleChange}
+            />
   <button type="submit" onClick={this.handleSUbmit}> submit </button>
   {open?
         <table>

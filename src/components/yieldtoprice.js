@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios'
 
-import {Calculator} from './calculator/calculator.component'
-import Result from './result/result.component'
+import {Calculator} from './Y2P/calculator/calculator.component'
+import Result from './Y2P/result/result.component'
 
 class YieldCalculator extends Component {
  constructor(props) {

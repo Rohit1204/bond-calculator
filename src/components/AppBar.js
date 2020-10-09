@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     
   },
   appBarStyle:{
-      backgroundColor:"white",
+      backgroundColor:"#38373F",
       color:'blue'
   },
   customtwo:{
