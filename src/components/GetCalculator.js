@@ -1,7 +1,6 @@
   
 import React, { Component } from 'react';
 import axios from 'axios';
-import "./GetCalculator.css";
 
 class GetCalculator extends Component {
   constructor(props){
@@ -161,8 +160,11 @@ handleSUbmit=(e)=>{
         />
   <label for="PRice">Price:</label>
   <input type="text" id="price" name="Price" onChange={this.handleChange}/><br/>
-  <label for="Bonds">NO. of bonds:</label>
-  <input type="text" id="bonds" name="bonds" onChange={this.handleChange}/><br/>
+  <input
+  style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"right", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
+  type="text" id="bonds" name="bonds" onChange={this.handleChange}
+  placeholder="BONDS" 
+  />
   <input 
     style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"right", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
     type="text" 
