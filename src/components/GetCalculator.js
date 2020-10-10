@@ -113,7 +113,7 @@ handleSUbmit=(e)=>{
  
   render() {
     const open=this.state.isopen;
-    const { Price, stdate,accured_interest_days, face_value_current, accured_interest,bonds, principal_amount,face_value_original,quantum } = this.state;
+    const { Price, stdate,accured_interest_days, face_value_current, accured_interest,bonds, principal_amount,face_value_original,quantum,last_IP_date,settlement_amount } = this.state;
     return (
       <div className='App'>
           <div className='container'>
@@ -125,6 +125,15 @@ handleSUbmit=(e)=>{
               handlePrice={this.handlePrice}
               handleChange={this.handleChange}
               
+            />
+              <Result
+              fvc = {face_value_current}  
+              fvo = {face_value_original}
+              quantum={quantum}
+              accrudintrst = {accured_interest} 
+              accrudintrstdays = {accured_interest_days}
+              principalamount = {principal_amount}
+              settlementamnt={settlement_amount}
             />
             
   <button type="submit" onClick={this.handleSUbmit}> submit </button>
