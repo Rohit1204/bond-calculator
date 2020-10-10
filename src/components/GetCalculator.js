@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 import {Calculator} from './Getcalculator/calculator/calculator.component'
-import Result from './Y2P/result/result.component'
+import Result from './Getcalculator/result/result.component'
 
 class GetCalculator extends Component {
   constructor(props){

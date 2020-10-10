@@ -4,6 +4,28 @@ import './result.style.css'
 import { Table } from 'reactstrap';
 
 const Result = ({fvc, fvo,quantum,accrudintrst,accrudintrstdays,principalamount,settlementamnt }) => {
+    console.log("######",fvo)
+    return (
+      <div 
+      style={{
+        display:"flex",
+        justifyContent:"space-between",
+      }}
+      >
+      <Table 
+      style={{
+          marginTop:"20px", 
+          color:"#c57254",
+          padding:"5px",
+          width:"32%",
+          textAlign : "center",
+          border:"1px solid grey",
+          borderRadius:"10px",
+          }}>
+        <thead>
+        <tr>
+           <td colspan = "3" style={{color:"aqua"}} >---</td>
+        </tr>
 
     );
 };
