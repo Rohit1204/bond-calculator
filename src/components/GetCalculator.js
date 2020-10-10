@@ -1,6 +1,7 @@
-  
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from 'axios'
+import {Calculator} from './Getcalculator/calculator/calculator.component'
+import Result from './Y2P/result/result.component'
 
 class GetCalculator extends Component {
   constructor(props){
@@ -25,12 +26,20 @@ class GetCalculator extends Component {
 
   }
 
+  handlePrice = value => {
+    this.setState({ Price: value });
+    console.log(this.state.Yield)
+  };
+  handleBond = value => {
+    this.setState({ bonds: value });
+    console.log(this.state.bonds)
+  };
+
   handleChange=(e)=> {
     console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value});
     console.log(this.state.ISIN)
     console.log(this.state.Price)
-    console.log(this.state.bonds)
     
 }
 handleSUbmit=(e)=>{
@@ -101,78 +110,23 @@ handleSUbmit=(e)=>{
   //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
   //     "Content-Type" : "application/json"
   //   };
-  //   axios
-  //   .post(url,bodyData,headers)
-  //   .then((resp) => {
-      
-  //     var value= (resp.data.d).split(',')
-  //     console.log(value)
-  //     const fvc=value[3].slice(20,27)
-  //    const fvo=value[2].slice(30,37)
-  //    const q=value[4].slice(10,19)
-  //    const lid=value[5].slice(15,25)
-  //    const aid=value[6].slice(24,26)
-  //    const ai=value[8].slice(19,28)
-  //    const pa=value[7].slice(19,27)
-  //    const sa=value[9].slice(19,30)
-
-      
-  //     let dict=[]
-    
-
-
-  
-      
-    
-      
-  //     // JSON.parse(JSON.stringify(resp.data.d)).map(feature=>{
-  //     //   let dict = {name:feature[0],isActive:Boolean(feature[1])}
-  //     //   data.push(dict)        
-  //     // })
-  //    //const posts = JSON.parse(resp.data.body);
-  //   // console.log(posts)
-  //    this.setState({ face_value_current:fvc,face_value_original:fvo,quantum:q,last_IP_date:lid,accured_interest_days:aid,accued_interest:ai,principal_amount:pa,settlement_amount:sa});
-  //   })
-  //   .catch((error) => {
-  //     // this.setState({ error, isLoading: false })
-  //     console.log(error);
-  //   });
-  // }
-  // renderTableData() {
-  //   const Rohit = JSON.stringify(this.state.data);
-  //   // console.log(Shivam.length)
-  //   return Rohit.map((student,index) => {
-  //     <li key={index} data={student} />
-
-  //       })}
+ 
   render() {
     const open=this.state.isopen;
+    const { Price, stdate,accured_interest_days, face_value_current, accured_interest,bonds, principal_amount,face_value_original,quantum } = this.state;
     return (
-      <div className="container">
-        <label for="ISIN">ISIN:</label>
-        <input 
-            style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"left", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
-            type="text" 
-            id="ISIN" 
-            name="ISIN" 
-            placeholder="ISIN"
-            onChange={this.handleChange}
-        />
-  <label for="PRice">Price:</label>
-  <input type="text" id="price" name="Price" onChange={this.handleChange}/><br/>
-  <input
-  style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"right", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
-  type="text" id="bonds" name="bonds" onChange={this.handleChange}
-  placeholder="BONDS" 
-  />
-  <input 
-    style = {{background:'rgb(56,55,63)',color:"aqua",outline:"none",padding:"7px",float:"right", border:"1px solid #09C2DE",borderRadius:"5px",textAlign:"center"}}
-    type="text" 
-    id="sdate" 
-    name="stdate"
-    placeholder="Settlement Date" 
-    onChange={this.handleChange}
+      <div className='App'>
+          <div className='container'>
+             <Calculator 
+              Price={Price}
+              month={stdate} 
+              bonds= {bonds}
+              handleBond ={this.handleBond}
+              handlePrice={this.handlePrice}
+              handleChange={this.handleChange}
+              
             />
+            
   <button type="submit" onClick={this.handleSUbmit}> submit </button>
   {open?
         <table>
@@ -197,10 +151,7 @@ handleSUbmit=(e)=>{
     <td>{this.state.settlement_amount}</td>
   </tr>
         </table>:void(0)}
-        <div className="footer">
-  {/* {this.renderTableData()} */}
-
-        </div>
+        </div>  
       </div>
     );
   }

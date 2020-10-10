@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from 'axios'
-
 import {Calculator} from './Y2P/calculator/calculator.component'
 import Result from './Y2P/result/result.component'
 
