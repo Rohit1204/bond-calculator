@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class NewsList extends Component {
+class P2YC extends Component {
   constructor(props){
     super(props);
     this.state  = {
@@ -131,4 +131,4 @@ handleSUbmit=(e)=>{
   }
 }
 
-export default NewsList;
+export default P2YC;

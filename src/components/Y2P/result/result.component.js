@@ -28,7 +28,7 @@ const Result = ({accrudintrst, ytc,ytm,cashflow_ytm,cashflow_ytc }) => {
       </tr>
 
         <tr>
-          <th>AccrudIntrst</th>
+          <th scope="row">AccrudIntrst</th>
           <th>YTM</th>
           <th>YTC</th>
         </tr>
@@ -36,7 +36,7 @@ const Result = ({accrudintrst, ytc,ytm,cashflow_ytm,cashflow_ytc }) => {
 
       <tbody style={{color:"#09C2DE"}}>
         <tr>
-      <td scope="row">{accrudintrst}</td>
+      <td >{accrudintrst}</td>
       <td>{ytm}</td>
       <td>{ytc}</td>
         </tr>

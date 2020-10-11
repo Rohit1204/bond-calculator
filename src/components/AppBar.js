@@ -67,11 +67,6 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const[source,setsource]=React.useState("")
-  
-  const handleSourceChange=(value)=> {
-    setsource(value);
-  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

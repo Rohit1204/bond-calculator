@@ -19,16 +19,17 @@ class GetCalculator extends Component {
       accured_interest_days:0,
       accued_interest:0,
       principal_amount:0,
-      settlement_amount:0
+      settlement_amount:0,
+      Stamp_duty:0,
+      Consideration_Amount:0
     };
     this.handleChange=this.handleChange.bind(this);
-    this.handleSUbmit=this.handleSUbmit.bind(this);
 
   }
 
   handlePrice = value => {
     this.setState({ Price: value });
-    console.log(this.state.Yield)
+    console.log(this.state.Price)
   };
   handleBond = value => {
     this.setState({ bonds: value });
@@ -42,7 +43,7 @@ class GetCalculator extends Component {
     console.log(this.state.Price)
     
 }
-handleSUbmit=(e)=>{
+componentDidUpdate =(e)=>{
   const url ='http://13.233.124.3/Common/BondService.asmx/Get_Settl_Calc';
     const   bodyData  =  {
       "ISIN": this.state.ISIN,
@@ -74,8 +75,6 @@ handleSUbmit=(e)=>{
     const q=val[0]['OUTPUT'][0]['data'][0]['Quantum']
     const lid=val[0]['OUTPUT'][0]['data'][0]['LastIp_Date']
 
-      
-      let dict=[]
     
 
 
@@ -89,7 +88,7 @@ handleSUbmit=(e)=>{
       // })
      //const posts = JSON.parse(resp.data.body);
     // console.log(posts)
-     this.setState({ face_value_current:fvc,face_value_original:fvo,quantum:q,last_IP_date:lid,accured_interest_days:aid,accued_interest:ai,principal_amount:pa,settlement_amount:sa,isopen:!this.state.isopen});
+     this.setState({ face_value_current:fvc,face_value_original:fvo,quantum:q,last_IP_date:lid,accured_interest_days:aid,accued_interest:ai,principal_amount:pa,settlement_amount:sa,isopen:!this.state.isopen,Stamp_duty:sd,Consideration_Amount:CA});
     })
     .catch((error) => {
       // this.setState({ error, isLoading: false })
@@ -112,8 +111,7 @@ handleSUbmit=(e)=>{
   //   };
  
   render() {
-    const open=this.state.isopen;
-    const { Price, stdate,accured_interest_days, face_value_current, accured_interest,bonds, principal_amount,face_value_original,quantum,last_IP_date,settlement_amount } = this.state;
+    const { Price, stdate,accured_interest_days, face_value_current, accued_interest,bonds, principal_amount,face_value_original,quantum,last_IP_date,settlement_amount } = this.state;
     return (
       <div className='App'>
           <div className='container'>
@@ -130,36 +128,14 @@ handleSUbmit=(e)=>{
               fvc = {face_value_current}  
               fvo = {face_value_original}
               quantum={quantum}
-              accrudintrst = {accured_interest} 
+              accrudintrst = {accued_interest} 
               accrudintrstdays = {accured_interest_days}
               principalamount = {principal_amount}
               settlementamnt={settlement_amount}
+              lastipdate={last_IP_date}
             />
             
-  <button type="submit" onClick={this.handleSUbmit}> submit </button>
-  {open?
-        <table>
-        <tr>
-    <th>face value current</th>
-    <th>Face value original </th>
-    <th>quantum</th>
-    <th>Last ip date</th>
-    <th>accured interest days</th>
-    <th>accured interest</th>
-    <th>principal amount</th>
-    <th>settlement date</th>
-  </tr>
-  <tr>
-    <td>{this.state.face_value_current}</td>
-    <td>{this.state.face_value_original}</td>
-    <td>{this.state.quantum}</td>
-    <td>{this.state.last_IP_date}</td>
-    <td>{this.state.accured_interest_days}</td>
-    <td>{this.state.accued_interest}</td>
-    <td>{this.state.principal_amount}</td>
-    <td>{this.state.settlement_amount}</td>
-  </tr>
-        </table>:void(0)}
+ 
         </div>  
       </div>
     );

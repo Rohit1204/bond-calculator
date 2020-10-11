@@ -66,59 +66,40 @@ handleSUbmit=(e)=>{
       pc= pc.map(i=>parseFloat(i))
       var sr=[]
        sr.push(value[324].slice(30,31))
-       for(var i=327;i<=339;i=i+3){
-      sr.push(value[i].slice(13,14))
+       for(var j=327;j<=339;j=j+3){
+      sr.push(value[j].slice(13,14))
         }
-       sr= sr.map(i=>parseInt(i))
+       sr= sr.map(j=>parseInt(j))
        var ipd=[]
-       for(var i=326;i<=341;i=i+3){
-      ipd.push(value[i].slice(14,25))
+       for(var k=326;k<=341;k=k+3){
+      ipd.push(value[k].slice(14,25))
         }
         var srytc=[]
         srytc.push(value[5].slice(30,31))
-        for(var i=8;i<=29;i=i+3){
-       srytc.push(value[i].slice(13,14))
+        for(var l=8;l<=29;l=l+3){
+       srytc.push(value[l].slice(13,14))
          }
-         for(var i=32;i<=299;i=i+3){
-          srytc.push(value[i].slice(13,15))
+         for(var m=32;m<=299;m=m+3){
+          srytc.push(value[m].slice(13,15))
             }
-            for(var i=302;i<=320;i=i+3){
-              srytc.push(value[i].slice(13,16))
+            for(var n=302;n<=320;n=n+3){
+              srytc.push(value[n].slice(13,16))
                 }
-        srytc= srytc.map(i=>parseInt(i))
+        srytc= srytc.map(l=>parseInt(l),m=>parseInt(m),n=>parseInt(n))
         var pcytc=[]
        pcytc.push(value[6].slice(19,28))
-       for(var i=9;i<=318;i=i+3){
-       pcytc.push(value[i].slice(19,25))
+       for(var o=9;o<=318;o=o+3){
+       pcytc.push(value[o].slice(19,25))
        }
        pcytc.push(value[321].slice(19,27))
-      pcytc= pcytc.map(i=>parseFloat(i))
+      pcytc= pcytc.map(o=>parseFloat(o))
       var ipdytc=[]
-       for(var i=7;i<=322;i=i+3){
-      ipdytc.push(value[i].slice(14,25))
+       for(var p=7;p<=322;p=p+3){
+      ipdytc.push(value[p].slice(14,25))
         }
        console.log(ipdytc)
-      //  console.log(cytc)
-      //  console.log(cytm)
-
-
-  //  const pa=value[7].slice(19,27)
-  //  const sa=value[9].slice(19,30)
-
-    
-    // let dict=[]
+ 
   
-
-
-
-    
-  
-    
-    // JSON.parse(JSON.stringify(resp.data.d)).map(feature=>{
-    //   let dict = {name:feature[0],isActive:Boolean(feature[1])}
-    //   data.push(dict)        
-    // })
-   //const posts = JSON.parse(resp.data.body);
   // console.log(posts)
    this.setState({accured_interest:ai,YTC:ytc,YTM:ytm,price_coupan:pc,serial_number:sr,IP_date:ipd,serial_number_ytc:srytc,price_coupan_ytc:pcytc,IP_date_ytc:ipdytc,isopen:!this.state.isopen});
   })
