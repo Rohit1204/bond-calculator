@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import GetCalculator from "./GetCalculator";
+import GetCalculator from "./Getcalculator/index"
 import NewsList from "./NewsList";
 import P2Y from "./P2Y";
 import SourceSelection from "./SourceSelection";
