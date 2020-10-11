@@ -122,10 +122,6 @@ handleSUbmit=(e)=>{
     <td>{this.state.cashflow_ytm}</td>
   </tr>
         </table>:void(0)}
-        <div className="footer">
-  {/* {this.renderTableData()} */}
-
-        </div>
       </div>
     );
   }

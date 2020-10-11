@@ -170,10 +170,6 @@ handleSUbmit=(e)=>{
   </tr>
         </table>:void(0)}
        
-        <div className="footer">
-  {/* {this.renderTableData()} */}
-
-        </div>
       </div>
     );
   }
